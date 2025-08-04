@@ -1,5 +1,0 @@
-Flask
-python-docx
-pdfplumber
-spacy
-en-core-web-sm
