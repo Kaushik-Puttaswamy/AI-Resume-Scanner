@@ -42,28 +42,7 @@ def parse_resume_data(text):
     """
     parsed_data = {}
 
-    # --- Email ---
-    email_match = re.search(r"[\w\.-]+@[\w\.-]+", text)
-    parsed_data["email"] = email_match.group(0) if email_match else ""
 
-    # --- Phone ---
-    phone_match = re.search(r"(\+?\d{1,4}[\s-]?)?(?:\d{10}|\d{3}[\s-]\d{3}[\s-]\d{4})", text)
-    parsed_data["phone"] = phone_match.group(0) if phone_match else ""
-
-    # --- Name (first detected PERSON entity) ---
-    name = ""
-    doc = nlp(text)
-    for ent in doc.ents:
-        if ent.label_ == "PERSON":
-            name = ent.text
-            break
-    parsed_data["name"] = name
-
-    # --- Skills ---
-    skills_list = [
-        "Python", "Java", "SQL", "C++",
-        "Machine Learning", "Data Analysis", "JavaScript",
-        "AWS", "Excel", "Deep Learning"
     ]
     found_skills = [skill for skill in skills_list if skill.lower() in text.lower()]
     parsed_data["skills"] = ", ".join(found_skills)
