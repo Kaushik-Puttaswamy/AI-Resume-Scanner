@@ -12,7 +12,4 @@ def index():
         file = request.files['resume']
         text = extract_text_from_resume(file)
         parsed_data = parse_resume_data(text)
-    return render_template("index.html", parsed_data=parsed_data)
 
-if __name__ == "__main__":
-    app.run(debug=True)
