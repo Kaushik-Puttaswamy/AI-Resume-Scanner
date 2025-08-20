@@ -8,8 +8,4 @@ def index():
     parsed_data = {}
     if request.method == "POST":
         if 'resume' not in request.files:
-            return render_template("index.html", error="No file uploaded!")
-        file = request.files['resume']
-        text = extract_text_from_resume(file)
-        parsed_data = parse_resume_data(text)
-
+            return render_template("index.html", error="No file uploaded
