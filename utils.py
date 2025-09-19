@@ -31,8 +31,4 @@ def parse_resume_data(text):
             name = ent.text
             break
     parsed_data["name"] = name
-    # Extract skills (example: look for common skills)
-    skills_list = ['python', 'java', 'sql', 'c++', 'machine learning', 'data analysis']
-    found_skills = [skill for skill in skills_list if skill.lower() in text.lower()]
-    parsed_data["skills"] = ', '.join(found_skills)
-    return parsed_data
+
