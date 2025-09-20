@@ -32,3 +32,4 @@ def parse_resume_data(text):
             break
     parsed_data["name"] = name
 
+    return render_template("index.html", parsed_data=parsed_data)
