@@ -13,7 +13,8 @@ def extract_text_from_resume(file):
         doc = docx.Document(file)
         return '\n'.join([para.text for para in doc.paragraphs])
     else:
-        return ""
+         return ""
+
 
 def parse_resume_data(text):
     parsed_data = {}
@@ -29,7 +30,5 @@ def parse_resume_data(text):
     for ent in doc.ents:
         if ent.label_ == "PERSON":
             name = ent.text
-            break
-    parsed_data["name"] = name
-
-    return render_template("index.html", parsed_data=parsed_data)
+              break
+    
