@@ -26,8 +26,4 @@ def parse_resume_data(text):
     # Extract name (using spaCy for better accuracy)
     doc = nlp(text)
     name = ""
-    for ent in doc.ents:
-        if ent.label_ == "PERSON":
-            name = ent.text
-            break
-    parsed_data["name"] = name
+
