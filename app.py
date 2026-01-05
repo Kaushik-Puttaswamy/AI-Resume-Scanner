@@ -30,12 +30,7 @@ def index():
 
         filename = secure_filename(file.filename)
 
-        try:
-            # Extract raw text from resume
-            text = extract_text_from_resume(file)
 
-            if not text.strip():
-                return render_template("index.html", error="Unable to extract text from file.")
 
 
 if __name__ == "__main__":
