@@ -30,11 +30,6 @@ def index():
 
         file = request.files["resume"]
 
-        if file.filename == "":
-            return render_template("index.html", error="No file selected!")
-
-        if not allowed_file(file.filename):
-            return render_template("index.html", error="Unsupported file type!")
 
         # Secure and save file
         filename = secure_filename(file.filename)
